@@ -20,4 +20,4 @@
 
 ## Stylus, SASS, SCSS のすゝめ
 
-- なるべく [Stylus](http://learnboost.github.io/stylus/), [SASS](http://sass-lang.com/), [SCSS](http://sass-lang.com/) で書く。煩雑になりがちな CSS がメンテナブルになるため。
+なるべく [Stylus](http://learnboost.github.io/stylus/), [SASS](http://sass-lang.com/), [SCSS](http://sass-lang.com/) で書く。煩雑になりがちな CSS がメンテナブルになるため。

@@ -34,4 +34,4 @@
 
 ## CoffeeScript のすゝめ
 
-- なるべく [CoffeeScript](http://coffeescript.org/) で書く。Good Parts でコードを構成するため。
+なるべく [CoffeeScript](http://coffeescript.org/) で書く。Good Parts でコードを構成するため。
