@@ -1,8 +1,8 @@
 # スタイルガイド
 
-- [Markupスタイルガイド](blob/master/markup.md)
-- [CSSスタイルガイド](blob/master/css.md)
-- [JavaScriptスタイルガイド](blob/master/javascript.md)
+- [Markupスタイルガイド](markup.md)
+- [CSSスタイルガイド](css.md)
+- [JavaScriptスタイルガイド](javascript.md)
 
 
 ## コーディングガイドライン
