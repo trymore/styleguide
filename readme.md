@@ -37,18 +37,6 @@ LF
 
 - [.gitignore](https://github.com/trymore/gitignore) をリポジトリのルートに置く
 
-### 資料や納品ファイルの命名
-
-ファイル名でのソートでバージョン順に並ぶ `ファイル名_yymmdd[a-z].拡張子` で命名する。
-`[a-z]` は同ファイル同日のバージョン違いで、日付をまたぐとリセットする。
-
-```
-styleguide_130912a.zip
-styleguide_130912b.zip
-styleguide_130912c.zip
-styleguide_130913a.zip
-...
-```
 
 ## エディタ
 
