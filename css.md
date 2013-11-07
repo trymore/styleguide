@@ -9,7 +9,7 @@
 ## コーディングガイドライン
 
 - ノードにスタイルを指定しない。ノード名を変更したらスタイルが無効になってしまうのを防ぐため。
-- ページ内で確実に一度しか現れないという確証がない限りは class を使用する。疑わしい場合は class を使用する。
+- スタイリングのために id を使わない。コーディングレベルでは一度しか出てこないことを保証することは難しく、要件変更のたびに id と class を変更するのは非合理的。
 
 ### 命名
 
@@ -17,7 +17,6 @@
 - `js-` プレフィクスのついたクラスは CSS から参照しない。`js-` は JS から参照するためにつけるクラス名なので。
 - `is-` プレフィクスのついたクラスは状態を表す。CSS と JS の双方から参照する。
 
+### Sass + Compass
 
-## Stylus, SASS, SCSS のすゝめ
-
-なるべく [Stylus](http://learnboost.github.io/stylus/), [SASS](http://sass-lang.com/), [SCSS](http://sass-lang.com/) で書く。煩雑になりがちな CSS がメンテナブルになるため。
+[Sass](http://sass-lang.com/)と[Compass](http://compass-style.org/)使って開発する。CSSをメンテナブルにするため。
