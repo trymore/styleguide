@@ -6,10 +6,11 @@
 |:-:|:-:|
 | UTF-8(BOM無し) | LF |
 
-## プロジェクト
+## 開発環境
 
 - Gitでバージョン管理する。
 - [.gitignore](https://github.com/trymore/gitignore) をリポジトリのルートに置く。
+- 開発タスク実行はGruntで行う
 
 ## エディタ
 

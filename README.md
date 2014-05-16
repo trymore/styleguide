@@ -6,6 +6,7 @@
 1. [HTMLのコーディングガイド](1-html.md)
 2. [CSSのコーディングガイド](2-css.md)
 3. [JavaScriptのコーディングガイド](3-javascript.md)
+3. [Grunt](4-grunt.md)
 
 ## 参考とした資料
 
