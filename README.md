@@ -2,10 +2,10 @@
 
 ## ページ
 
-0. [概要](0.概要.md)
-1. [HTMLのコーディングガイド](1.HTMLのコーディングガイド.md)
-2. [CSSのコーディングガイド](2.CSSのコーディングガイド.md)
-3. [JavaScriptのコーディングガイド](3.JavaScriptのコーディングガイド.md)
+0. [概要](0-overview.md)
+1. [HTMLのコーディングガイド](1-html.md)
+2. [CSSのコーディングガイド](2-css.md)
+3. [JavaScriptのコーディングガイド](3-javascript.md)
 
 ## 参考とした資料
 
