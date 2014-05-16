@@ -7,14 +7,15 @@
 
 GruntはNode環境で動くツールなのでNode環境を構築します。
 
-1. nvmのインストール
+1. [nvm](https://github.com/creationix/nvm)のインストール
 Nodeのバージョンマネージャをインストールします。
 ```bash
 git clone git://github.com/creationix/nvm.git ~/.nvm
-touch ~/.nvm/nvm.sh > ~/.bash_profile
+source ~/.nvm/nvm.sh
+echo "source ~/.nvm/nvm.sh" >> ~/.bashrc
 ```
 
-2. Nodeのインストール
+2. [Node](https://github.com/joyent/node)のインストール
 Nodeの安定版の最新バージョンをインストールします。
 ```bash
 nvm ls-remote
@@ -34,7 +35,7 @@ nvm install v0.10.28
 ```
 このバージョンを使うことを設定ファイルに書いておきます。
 ```bash
-touch "nvm use v0.10.28" > ~/.bash_profile
+echo "nvm use v0.10.28" >> ~/.bashrc
 ```
 
 3. Gruntのインストール
