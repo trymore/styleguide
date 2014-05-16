@@ -1,4 +1,4 @@
-# JavaScript スタイルガイド
+# JavaScriptスタイルガイド
 
 
 ## コーディングスタイル
