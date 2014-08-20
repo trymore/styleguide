@@ -19,3 +19,8 @@
 # SCSSとCompassを使用する
 
 CSSをメンテナブルにするため、[SCSS](http://sass-lang.com/)と[Compass](http://compass-style.org/)使って開発する。
+
+
+# [Sass](http://sass-lang.com/)で書く
+
+CSS が持つ Bad Parts を排除する。`@import`, `@include` を使い作業効率を上げる。

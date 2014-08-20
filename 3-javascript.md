@@ -51,6 +51,6 @@ JavaScriptからはノードのクラスを付け替えるという実装を選�
 - 複数回参照する jQuery オブジェクトはキャッシュする。DOM へのアクセス回数を減らしパフォーマンスを向上するため。
 
 
-# CoffeeScriptを使う
+# [CoffeeScript](http://coffeescript.org/)を使う
 
-[CoffeeScript](http://coffeescript.org/) で書く。Good Parts でコードを構成するため。
+JavaScript がもつ Bad Parts を排除する。
