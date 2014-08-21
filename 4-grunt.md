@@ -41,5 +41,5 @@ echo "nvm use v0.10.28" >> ~/.bashrc
 ### 3. [grunt-cli](https://github.com/gruntjs/grunt-cli)のインストール
 コマンドラインからGruntを実行するためのgrunt-cliをインストールします。
 ```bash
-nvm install -g grunt-cli
+npm install -g grunt-cli
 ```
