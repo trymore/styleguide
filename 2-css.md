@@ -16,11 +16,11 @@
 - スタイリングのためにidを使用しない: コーディングレベルでは一度しか出てこないことを保証することは難しく、要件変更のたびに`id`と`class`を変更するのは非合理的。
 
 
-# SCSSとCompassを使用する
+# Stylusとnibを使用する
 
-CSSをメンテナブルにするため、[SCSS](http://sass-lang.com/)と[Compass](http://compass-style.org/)使って開発する。
+CSSをメンテナブルにするため、[Stylus](http://stylus-lang.com/)と[nib](https://tj.github.io/nib/)使って開発する。
 
 
-# [Sass](http://sass-lang.com/)で書く
+# [Stylus](http://stylus-lang.com/)で書く
 
-CSS が持つ Bad Parts を排除する。`@import`, `@include` を使い作業効率を上げる。
+CSS が持つ Bad Parts を排除する。`mixins`, `@extend` 等を使い作業効率を上げる。
