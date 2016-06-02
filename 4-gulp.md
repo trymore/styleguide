@@ -5,7 +5,7 @@
 
 ## セットアップ
 
-GruntはNode環境で動くツールなのでNode環境を構築します。
+GulpはNode環境で動くツールなのでNode環境を構築します。
 
 ### 1. [nvm](https://github.com/creationix/nvm)のインストール
 Nodeのバージョンマネージャをインストールします。
@@ -38,8 +38,8 @@ nvm install v0.10.28
 echo "nvm use v0.10.28" >> ~/.bashrc
 ```
 
-### 3. [grunt-cli](https://github.com/gruntjs/grunt-cli)のインストール
-コマンドラインからGruntを実行するためのgrunt-cliをインストールします。
+### 3. [gulp](https://github.com/gulpjs/gulp)のインストール
+コマンドラインからGulpを実行するためのgulpをインストールします。
 ```bash
-npm install -g grunt-cli
+npm install -g gulp
 ```

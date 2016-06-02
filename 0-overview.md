@@ -10,7 +10,7 @@
 
 - Gitでバージョン管理する。
 - [.gitignore](https://github.com/trymore/gitignore) をリポジトリのルートに置く。
-- 開発タスク実行はGruntで行う
+- 開発タスク実行はGulpで行う
 
 ## エディタ
 
