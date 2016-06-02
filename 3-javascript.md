@@ -7,7 +7,7 @@
 ## 命名
 
 - 変数・関数は `camelCase` で命名する。
-- コンストラクタは `CamelCase` で命名する。
+- クラス・コンストラクタは `CamelCase` で命名する。
 - 正規表現は `r` 接頭辞を付けて命名する。
 
 
@@ -51,6 +51,10 @@ JavaScriptからはノードのクラスを付け替えるという実装を選�
 - 複数回参照する jQuery オブジェクトはキャッシュする。DOM へのアクセス回数を減らしパフォーマンスを向上するため。
 
 
-# [CoffeeScript](http://coffeescript.org/)を使う
+# [CoffeeScript](http://coffeescript.org/)又は[Babel](https://babeljs.io/)を使う
 
+## [CoffeeScript](http://coffeescript.org/)
 JavaScript がもつ Bad Parts を排除する。
+
+## [Babel](https://babeljs.io/)
+ECMAScript の最新仕様で記述できる。
