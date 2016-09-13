@@ -3,9 +3,9 @@
 ## ページ
 
 0. [概要](0-overview.md)
-1. [HTMLのコーディングガイド](1-html.md)
-2. [CSSのコーディングガイド](2-css.md)
-3. [JavaScriptのコーディングガイド](3-javascript.md)
+1. [HTMLスタイルガイド](1-html.md)
+2. [CSSスタイルガイド](2-css.md)
+3. [JavaScriptスタイルガイド](3-javascript.md)
 3. [Gulp](4-gulp.md)
 
 ## 参考とした資料
