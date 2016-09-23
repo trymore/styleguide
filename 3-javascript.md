@@ -80,6 +80,47 @@ hoge += 1;
 また `const` `let` はブロックスコープの為、関数スコープの `var` よりもスコープ範囲を狭くできる。
 
 
+## オブジェクト
+- リテラル構文を使用する。
+
+```javascript
+// bad
+const hoge = new Object();
+
+// good
+const hoge = {};
+```
+
+
+## 配列
+- リテラル構文を使用する。
+
+```javascript
+// bad
+const hoge = new Array();
+
+// good
+const hoge = [];
+```
+
+
+## 文字列
+- シングルクォートを使用する。
+- 文字列を生成する場合は、テンプレートリテラルを使用する。
+- `eval()` を使用しない。
+
+```javascript
+// bad
+const hoge = "hello";
+const fuga = hoge + ' world'
+
+// good
+const hoge = 'hello';
+const hoge = `${ hoge } world`;
+```
+`eval()` は虚弱性を作る危険性がある為。
+
+
 ## 関数
 - キャメルケースで命名する。
 - 関数式と関数宣言のどちらを使用してもよい。
@@ -215,8 +256,8 @@ if(a === b) {}
 
 
 ## コメント
-- 名称だけでは分かりづらい箇所には、コメントを記述するようにする。
-- [ESDoc](https://esdoc.org/) に準拠したコメントを推奨。
+名称だけでは分かりづらい箇所には、コメントを記述するようにする。  
+[ESDoc](https://esdoc.org/) に準拠したコメントを推奨。
 
 
 ## セレクタ
