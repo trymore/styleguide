@@ -130,15 +130,18 @@ class A {
 ```
 
 ### インスタンスメンバ
-- キャメルケースで命名する。
+- 基本はキャメルケースで命名する。
 - 基本は `constructor` 内で宣言する。
 - ローカルメンバは `_` 接頭詞をつける。
+- 定数の場合は全て大文字のスネークケースで命名する。
 
 ```javascript
 class A {
   constructor() {
     this.hogeHoge = 1;
     this._fugaFuga = 1;  // ローカルメンバ
+    this.HOGE_HOGE = 1;  // 定数
+    this._FUGA_FUGA = 1;  // ローカル定数
   }
 }
 ```
