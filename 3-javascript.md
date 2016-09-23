@@ -5,7 +5,7 @@
 
 ### インデント
 スペース2個でインデントする。
-```
+```javascript
 // bad
 const hoge = () => {
 console.log(1);
@@ -23,7 +23,7 @@ const hoge = () => {
 
 ### 1行の文字数
 基本的に100文字以内に収める。
-```
+```javascript
 // bad
 if(aaaaaaaaaa === bbbbbbbbbb && cccccccccc === dddddddddd && eeeeeeeeee === ffffffffff && gggggggggg === hhhhhhhhhh) {
   console.log('ok');
@@ -41,7 +41,7 @@ if(aaaaaaaaaa === bbbbbbbbbb &&
 
 ## 名前空間
 グローバルの名前空間の使用は最低限に抑える。
-```
+```javascript
 // bad
 hoge = 1;
 
@@ -54,7 +54,7 @@ const hoge = 1;
 - `const` を使用。
 - 全て大文字のスネークケースで命名する。
 
-```
+```javascript
 const HOGE_HOGE = 1;
 ```
 参照の再割当てを防げる。
@@ -67,7 +67,7 @@ const HOGE_HOGE = 1;
 - ローカル変数は `_` 接頭詞をつける。
 - 正規表現は `r` 接頭詞をつける。
 
-```
+```javascript
 const hogeHoge = 1;
 const _fugaFuga = 1;  // ローカル変数
 const rPiyoPiyo = /^abc$/;  // 正規表現
@@ -86,7 +86,7 @@ hoge += 1;
 - 基本はレキシカルな `this` になるアロー関数を使用する。
 - ダイナミックな `this` を使いたい場合は通常の関数を使用する。
 
-```
+```javascript
 // 関数式
 const hogeHoge = () => {};  // レキシカルなthis
 const fugaFuga = function() {};  // ダイナミックなthis
@@ -102,7 +102,7 @@ function fugaFuga() {};  // ダイナミックなthis
 - 引数はキャメルケースで命名する。
 - オプションの場合は初期値を入れる。
 
-```
+```javascript
 const hoge = (fugaFuga, piyo = 0) => {};
 ```
 
@@ -113,7 +113,7 @@ const hoge = (fugaFuga, piyo = 0) => {};
 ### クラス・コンストラクタの命名
 - パスカルケースで命名する。
 
-```
+```javascript
 class HogeHoge {};  // クラス
 const HogeHoge = () => {};  // コンストラクタ
 ```
@@ -123,7 +123,7 @@ const HogeHoge = () => {};  // コンストラクタ
 - 接頭詞に動詞を使用する。
 - ローカルメソッドは `_` 接頭詞をつける。
 
-```
+```javascript
 class A {
   hogeHoge() {}
   _fugaFuga() {}  // ローカルメソッド
@@ -135,7 +135,7 @@ class A {
 - 基本は `constructor` 内で宣言する。
 - ローカルメンバは `_` 接頭詞をつける。
 
-```
+```javascript
 class A {
   constructor() {
     this.hogeHoge = 1;
@@ -148,7 +148,7 @@ class A {
 - キャメルケースで命名する。
 - ローカルメンバは `_` 接頭詞をつける。
 
-```
+```javascript
 class A {
   static hogeHoge() {}
   static _fugaFuga() {}  // ローカルメソッド
@@ -163,7 +163,7 @@ class A {
 - ローカルメンバは `_` 接頭詞をつける。
 - 定数の場合は全て大文字のスネークケースで命名する。
 
-```
+```javascript
 class A {
   static get hogeHoge() {
     return 1;
@@ -188,7 +188,7 @@ class A {
 - キャメルケースで命名する。
 - ローカルメンバは `_` 接頭詞をつける。
 
-```
+```javascript
 class A {
   static hogeHoge = 1;
   static _fugaFuga = 1;  // ローカルメンバ
@@ -197,7 +197,7 @@ class A {
 ※現状の ECMAScript の仕様では不可だが、クラス内で宣言することで分かりやすくする。
 
 クラス内で宣言出来ない場合はクラス定義後に宣言する。
-```
+```javascript
 class A {}
 A.hogeHoge = 1;
 ```
@@ -205,7 +205,7 @@ A.hogeHoge = 1;
 
 ## 比較演算子
 `===`、`!===` で比較する。
-```
+```javascript
 if(a === b) {}
 ```
 `==` は曖昧な比較でバグを生む可能性がある。
@@ -214,12 +214,12 @@ if(a === b) {}
 
 ## セレクタ
 JavaScript から使用するクラスには `js-` プレフィクスをつける。
-```
+```html
 <div class="js-hoge"></div>
 ```
 
 CSS に要素の状態を伝達するためのクラスには `is-` プレフィクスをつける。
-```
+```css
 .is-selected { display: block; }
 ```
 
