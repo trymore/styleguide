@@ -6,7 +6,17 @@
 ### インデント
 スペース2個でインデントする。
 ```
-const foo = () => {
+// bad
+const hoge = () => {
+console.log(1);
+}
+
+const hoge = () => {
+    console.log(1);
+}
+
+// good
+const hoge = () => {
   console.log(1);
 }
 ```
@@ -14,6 +24,12 @@ const foo = () => {
 ### 1行の文字数
 基本的に100文字以内に収める。
 ```
+// bad
+if(aaaaaaaaaa === bbbbbbbbbb && cccccccccc === dddddddddd && eeeeeeeeee === ffffffffff && gggggggggg === hhhhhhhhhh) {
+  console.log('ok');
+}
+
+// good
 if(aaaaaaaaaa === bbbbbbbbbb &&
    cccccccccc === dddddddddd &&
    eeeeeeeeee === ffffffffff &&
@@ -26,65 +42,68 @@ if(aaaaaaaaaa === bbbbbbbbbb &&
 ## 名前空間
 グローバルの名前空間の使用は最低限に抑える。
 ```
+// bad
+hoge = 1;
+
+// good
 const hoge = 1;
 ```
 
 
 ## 定数
-`const` を使用。  
-全て大文字で命名する。
+- `const` を使用。
+- 全て大文字のスネークケースで命名する。
+
 ```
-const HOGE = 1;
+const HOGE_HOGE = 1;
 ```
 参照の再割当てを防げる。
 
 
 ## 変数
-`const` を使用。  
-キャメルケースで命名する。
-```
-const hoge = 1;
-```
-参照の再割当てを防げる。  
-またブロックスコープの為、関数スコープの `var` よりもスコープ範囲を狭くできる。
+- 基本は `const` を使用。
+- 参照の再割当てが必要な場合は `const` と同じブロックスコープの `let` を使用する。
+- キャメルケースで命名する。
+- ローカル変数は `_` 接頭詞をつける。
+- 正規表現は `r` 接頭詞をつける。
 
-参照の再割当てが必要な場合は `const` と同じブロックスコープの `let` を使用する。
 ```
+const hogeHoge = 1;
+const _fugaFuga = 1;  // ローカル変数
+const rPiyoPiyo = /^abc$/;  // 正規表現
+
+// 再割当て時
 let hoge = 1;
 hoge += 1;
 ```
-
-ローカル変数は `_` 接頭詞をつける。
-```
-const _local = 1;
-```
-
-正規表現は `r` 接頭詞をつける。
-```
-const rHoge = /^abc$/;
-```
+`const` 使用時は参照の再割当てを防げる。  
+また `const` `let` はブロックスコープの為、関数スコープの `var` よりもスコープ範囲を狭くできる。
 
 
 ## 関数
-キャメルケースで命名する。  
-関数式と関数宣言のどちらを使用してもよい。  
-基本はレキシカルな `this` になるアロー関数を使用する。  
-ダイナミックな `this` を使いたい場合は通常の関数を使用する。  
+- キャメルケースで命名する。
+- 関数式と関数宣言のどちらを使用してもよい。
+- 基本はレキシカルな `this` になるアロー関数を使用する。
+- ダイナミックな `this` を使いたい場合は通常の関数を使用する。
+
 ```
 // 関数式
-const foo = () => {};  // レキシカルなthis
-const foo = function() {};  // ダイナミックなthis
+const hogeHoge = () => {};  // レキシカルなthis
+const fugaFuga = function() {};  // ダイナミックなthis
 
 // 関数宣言
-foo() => {};  // レキシカルなthis
-function foo() {};  // ダイナミックなthis
+hogeHoge() => {};  // レキシカルなthis
+function fugaFuga() {};  // ダイナミックなthis
 ```
 ただし関数式は巻き上げがないので注意。
 
-引数はキャメルケースで命名する。  
-オプションの場合は初期値を入れる。
+
+### 引数
+- 引数はキャメルケースで命名する。
+- オプションの場合は初期値を入れる。
+
 ```
-const foo = (argArg, argOpt = 0) => {};
+const hoge = (fugaFuga, piyo = 0) => {};
 ```
 
 
@@ -92,63 +111,87 @@ const foo = (argArg, argOpt = 0) => {};
 クラスが使える場合はコンストラクタではなく、クラスを優先して使用する。
 
 ### クラス・コンストラクタの命名
-パスカルケースで命名する。
+- パスカルケースで命名する。
+
 ```
-class PascalCase {};
-const PascalCase = () => {};
+class HogeHoge {};  // クラス
+const HogeHoge = () => {};  // コンストラクタ
 ```
 
-### クラスメソッド
-キャメルケースで命名する。  
+### インスタンスメソッド
+- キャメルケースで命名する。
+- 接頭詞に動詞を使用する。
+- ローカルメソッドは `_` 接頭詞をつける。
+
 ```
 class A {
-  foo() {}
+  hogeHoge() {}
+  _fugaFuga() {}  // ローカルメソッド
 }
 ```
 
-ローカルメソッドは `_` 接頭詞をつける。
+### インスタンスメンバ
+- キャメルケースで命名する。
+- 基本は `constructor` 内で宣言する。
+- ローカルメンバは `_` 接頭詞をつける。
+
 ```
 class A {
-  _foo() {}
+  constructor() {
+    this.hogeHoge = 1;
+    this._fugaFuga = 1;  // ローカルメンバ
+  }
+}
+```
+
+### クラスメソッド
+- キャメルケースで命名する。
+- ローカルメンバは `_` 接頭詞をつける。
+
+```
+class A {
+  static hogeHoge() {}
+  static _fugaFuga() {}  // ローカルメソッド
 }
 ```
 
 ### クラスメンバ
-キャメルケースで命名する。
-基本は `constructor` 内で宣言する。
-```
-class A {
-  constructor() {
-    this.hoge = 1;
-  }
-}
-```
 
-ローカルメンバは `_` 接頭詞をつける。
-```
-class A {
-  constructor() {
-    this._hoge = 1;
-  }
-}
-```
+#### 変更がない場合
+- 基本はキャメルケースで命名する。
+- getter を使って宣言する。
+- ローカルメンバは `_` 接頭詞をつける。
+- 定数の場合は全て大文字のスネークケースで命名する。
 
-#### static で変更がない場合
-getter を使って宣言する。
 ```
 class A {
-  static get hoge() {
+  static get hogeHoge() {
     return 1;
-  };
+  }
+
+  static get _fugaFuga() {  // ローカルメンバ
+    return 1;
+  }
+
+  static get HOGE_HOGE() {  // 定数
+    return 1;
+  }
+
+  static get _FUGA_FUGA() {  // ローカル定数
+    return 1;
+  }
 }
 ```
 
-#### static で変更がある場合
-可能ならクラス内で宣言する。
-基本はキャメルケースで命名する。
+#### 変更がある場合
+- 可能ならクラス内で宣言する。
+- キャメルケースで命名する。
+- ローカルメンバは `_` 接頭詞をつける。
+
 ```
 class A {
-  static hoge = 1;
+  static hogeHoge = 1;
+  static _fugaFuga = 1;  // ローカルメンバ
 }
 ```
 ※現状の ECMAScript の仕様では不可だが、クラス内で宣言することで分かりやすくする。
@@ -156,14 +199,7 @@ class A {
 クラス内で宣言出来ない場合はクラス定義後に宣言する。
 ```
 class A {}
-A.hoge = 1;
-```
-
-ローカル変数は `_` 接頭詞をつける。
-```
-class A {
-  static _hoge = 1;
-}
+A.hogeHoge = 1;
 ```
 
 
@@ -189,35 +225,28 @@ CSS に要素の状態を伝達するためのクラスには `is-` プレフィ
 
 
 ## データ
-データはJavaScript内に記述しない。
-特にViewに関わるデータはControllerやModelであるべきJavaScriptが持つべきではない。
+データはJavaScript内に記述しない。  
+特にViewに関わるデータはControllerやModelであるべきJavaScriptが持つべきではない。  
 JavaScriptはロジックのみを提供し、データは外部のHTMLやJSONやXMLに記述する。
 
 ### 画像のパスを書かない
-画像のパスはHTMLに、表示の状態はCSSに記述する。
+画像のパスはHTMLに、表示の状態はCSSに記述する。  
 JavaScriptからはノードのクラスを付け替えるという実装を選択する。
 
 
 ## ライブラリ使用上の注意点
-外部ドメインの JavaScript リソースをロードしない。コードの変質に気づくことが困難でセキュリティ上、その他のリスクが存在するため。
-
-### [jQuery](http://jquery.com/)や[Zepto.js](http://zeptojs.com/)の使用上の注意点
-- 最新バージョンを使う
-- `$.get` や `$.post` は使わず、`$.ajax` を使う。エラーハンドリングができないため。
-- 複数回参照する jQuery オブジェクトはキャッシュする。DOM へのアクセス回数を減らしパフォーマンスを向上するため。
+外部ドメインの JavaScript リソースをロードしない。  
+コードの変質に気づくことが困難でセキュリティ上、その他のリスクが存在するため。
 
 
 ## コンパイラ・トランスパイラ
 基本は以下のどれかを使用する。
-- [CoffeeScript](http://coffeescript.org/)
-- [Babel](https://babeljs.io/)
-- [TypeScript](https://www.typescriptlang.org/)
 
-### CoffeeScript
+### [CoffeeScript](http://coffeescript.org/)
 JavaScript がもつ Bad Parts を排除できる。
 
-### Babel
+### [Babel](https://babeljs.io/)
 ECMAScript の最新仕様で記述できる。
 
-### TypeScript
+### [TypeScript](https://www.typescriptlang.org/)
 静的型付けを使用して記述できる。
