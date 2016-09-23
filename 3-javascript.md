@@ -1,9 +1,7 @@
 # JavaScriptスタイルガイド
 
 
-## 全体
-
-### インデント
+## インデント
 スペース2個でインデントする。
 ```javascript
 // bad
@@ -21,7 +19,7 @@ const hoge = () => {
 }
 ```
 
-### 1行の文字数
+## 1行の文字数
 基本的に100文字以内に収める。
 ```javascript
 // bad
@@ -39,6 +37,60 @@ if(aaaaaaaaaa === bbbbbbbbbb &&
 ```
 
 
+## 命名規則
+オブジェクト、関数、引数、インスタンス、プロパティ名はキャメルケースを使用する。
+```javascript
+const hogeHoge = 1;
+
+fugaFuga(piyoPiyo) => {};
+
+class A {
+  static hogeHoge = 1;
+  fugaFuga() {
+    this.piyoPiyo = 1;
+  }
+}
+```
+
+クラスやコンストラクタはパスカルケースを使用する。
+```javascript
+class HogeHoge {}
+
+const FugaFuga = () => {};
+```
+
+定数は大文字のスネークケースを使用する。
+```javascript
+const HOGE_HOGE = 1;
+
+class A {
+  static get HOGE_HOGE() {
+    return 1;
+  }
+}
+```
+
+プライベートなオブジェクト、関数、インスタンス、プロパティ名は `_`（アンダースコア）接頭詞を使用する。
+```javascript
+const _hoge = 1;
+
+_fuga() => {};
+
+class A {
+  static get _hoge() {
+    return 1;
+  }
+  _fuga() {
+    this._piyo = 1;
+  }
+}
+```
+
+正規表現は `r` 接頭詞をつける。
+```javascript
+const rHoge = 1;
+```
+
 ## 名前空間
 グローバルの名前空間の使用は最低限に抑える。
 ```javascript
@@ -51,9 +103,7 @@ const hoge = 1;
 
 
 ## 定数
-- `const` を使用。参照の再割当てを防ぐ為。
-- 全て大文字のスネークケースで命名する。
-
+`const` を使用。参照の再割当てを防ぐ為。
 ```javascript
 const HOGE_HOGE = 1;
 ```
@@ -62,14 +112,9 @@ const HOGE_HOGE = 1;
 ## 変数
 - 基本は `const` を使用。参照の再割当てを防ぐ為。
 - 参照の再割当てが必要な場合は `const` と同じブロックスコープの `let` を使用する。
-- キャメルケースで命名する。
-- ローカル変数は `_` 接頭詞をつける。
-- 正規表現は `r` 接頭詞をつける。
 
 ```javascript
-const hogeHoge = 1;
-const _fugaFuga = 1;  // ローカル変数
-const rPiyoPiyo = /^abc$/;  // 正規表現
+const hoge = 1;
 
 // 再割当て時
 let hoge = 1;
@@ -119,15 +164,14 @@ const hoge = `${ hoge } world`;
 
 
 ## 関数
-- キャメルケースで命名する。
 - 関数式と関数宣言のどちらを使用してもよい。関数式は巻き上げがないので注意。
 - 基本はレキシカルな `this` になるアロー関数を使用する。
 - ダイナミックな `this` を使いたい場合は通常の関数を使用する。
 
 ```javascript
 // 関数式
-const hogeHoge = () => {};  // レキシカルなthis
-const fugaFuga = function() {};  // ダイナミックなthis
+const hoge = () => {};  // レキシカルなthis
+const fuga = function() {};  // ダイナミックなthis
 
 // 関数宣言
 hogeHoge() => {};  // レキシカルなthis
@@ -136,12 +180,11 @@ function fugaFuga() {};  // ダイナミックなthis
 
 
 ### 引数
-- 引数はキャメルケースで命名する。
 - オプションの場合は初期値を入れる。
 - オプションは末尾に追加する。
 
 ```javascript
-const hoge = (fugaFuga, piyo = 0) => {};
+const hoge = (fuga, piyo = 0) => {};
 ```
 
 
@@ -149,101 +192,67 @@ const hoge = (fugaFuga, piyo = 0) => {};
 クラスが使える場合はコンストラクタではなく、クラスを優先して使用する。
 
 ### クラス・コンストラクタの命名
-- パスカルケースで命名する。
-
 ```javascript
-class HogeHoge {};  // クラス
-const HogeHoge = () => {};  // コンストラクタ
+class Hoge {};  // クラス
+const Fuga = () => {};  // コンストラクタ
 ```
 
 ### インスタンスメソッド
-- キャメルケースで命名する。
-- ローカルメソッドは `_` 接頭詞をつける。
-
 ```javascript
 class A {
-  hogeHoge() {}
-  _fugaFuga() {}  // ローカルメソッド
+  hoge() {}
 }
 ```
 
 ### インスタンスメンバ
-- 基本はキャメルケースで命名する。
-- 基本は `constructor` 内で宣言する。
-- ローカルメンバは `_` 接頭詞をつける。
-- 定数の場合は全て大文字のスネークケースで命名する。
-
+基本は `constructor` 内で宣言する。
 ```javascript
 class A {
   constructor() {
-    this.hogeHoge = 1;
-    this._fugaFuga = 1;  // ローカルメンバ
-    this.HOGE_HOGE = 1;  // 定数
-    this._FUGA_FUGA = 1;  // ローカル定数
+    this.hoge = 1;
   }
 }
 ```
 
 ### クラスメソッド
-- キャメルケースで命名する。
-- ローカルメンバは `_` 接頭詞をつける。
-
 ```javascript
 class A {
-  static hogeHoge() {}
-  static _fugaFuga() {}  // ローカルメソッド
+  static hoge() {}
 }
 ```
 
 ### クラスメンバ
 
 #### 変更がない場合
-- 基本はキャメルケースで命名する。
-- getter を使って宣言する。
-- ローカルメンバは `_` 接頭詞をつける。
-- 定数の場合は全て大文字のスネークケースで命名する。
+getter を使って宣言する。
 
 ```javascript
 class A {
-  static get hogeHoge() {
-    return 1;
-  }
-
-  static get _fugaFuga() {  // ローカルメンバ
-    return 1;
-  }
-
-  static get HOGE_HOGE() {  // 定数
-    return 1;
-  }
-
-  static get _FUGA_FUGA() {  // ローカル定数
+  static get hoge() {
     return 1;
   }
 }
 ```
 
 #### 変更がある場合
-- 可能ならクラス内で宣言する。現状の ECMAScript の仕様では不可だが、クラス内で宣言することで分かりやすくする。
-- キャメルケースで命名する。
-- ローカルメンバは `_` 接頭詞をつける。
-
+可能ならクラス内で宣言する。  
+現状の ECMAScript の仕様では不可だが、クラス内で宣言することで分かりやすくする。
 ```javascript
 class A {
-  static hogeHoge = 1;
-  static _fugaFuga = 1;  // ローカルメンバ
+  static hoge = 1;
 }
 ```
 
 クラス内で宣言出来ない場合はクラス定義後に宣言する。
 ```javascript
 class A {}
-A.hogeHoge = 1;
+A.hoge = 1;
 ```
 
 
 ## モジュール
-モジュールの読み込み、出力は `import`、`export` を使用する。標準仕様の為、将来性を考えて。
+モジュールの読み込み、出力は `import`、`export` を使用する。  
+標準仕様の為、将来性を考えて。
 ```javascript
 // bad
 const Hoge = require('./hoge');
