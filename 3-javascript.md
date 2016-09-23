@@ -242,6 +242,19 @@ A.hogeHoge = 1;
 ```
 
 
+## モジュール
+モジュールの読み込み、出力は `import`、`export` を使用する。標準仕様の為、将来性を考えて。
+```javascript
+// bad
+const Hoge = require('./hoge');
+module.exports = Hoge;
+
+// good
+import Fuga from './fuga';
+export default Fuga;
+```
+
+
 ## 比較演算子
 - `===`、`!===` で比較する。`==` は曖昧な比較でバグを生む可能性がある為。
 - 値がないことを調べる場合のみ `== null` で比較する。
