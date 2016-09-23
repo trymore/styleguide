@@ -67,25 +67,24 @@ const rHoge = /^abc$/;
 
 ## 関数
 キャメルケースで命名する。  
-接頭詞に動詞を使用する。  
 関数式と関数宣言のどちらを使用してもよい。  
 基本はレキシカルな `this` になるアロー関数を使用する。  
 ダイナミックな `this` を使いたい場合は通常の関数を使用する。  
 ```
 // 関数式
-const getFoo = () => {};  // レキシカルなthis
-const getFoo = function() {};  // ダイナミックなthis
+const foo = () => {};  // レキシカルなthis
+const foo = function() {};  // ダイナミックなthis
 
 // 関数宣言
-getFoo() => {};  // レキシカルなthis
-function getFoo() {};  // ダイナミックなthis
+foo() => {};  // レキシカルなthis
+function foo() {};  // ダイナミックなthis
 ```
 ただし関数式は巻き上げがないので注意。
 
 引数はキャメルケースで命名する。  
 オプションの場合は初期値を入れる。
 ```
-const getFoo = (argArg, argOpt = 0) => {};
+const foo = (argArg, argOpt = 0) => {};
 ```
 
 
@@ -101,17 +100,16 @@ const PascalCase = () => {};
 
 ### クラスメソッド
 キャメルケースで命名する。  
-接頭詞に動詞を使用する。
 ```
 class A {
-  getFoo() {}
+  foo() {}
 }
 ```
 
 ローカルメソッドは `_` 接頭詞をつける。
 ```
 class A {
-  _getFoo() {}
+  _foo() {}
 }
 ```
 
