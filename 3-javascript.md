@@ -138,6 +138,7 @@ function fugaFuga() {};  // ダイナミックなthis
 ### 引数
 - 引数はキャメルケースで命名する。
 - オプションの場合は初期値を入れる。
+- オプションは末尾に追加する。
 
 ```javascript
 const hoge = (fugaFuga, piyo = 0) => {};
