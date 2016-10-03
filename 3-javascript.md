@@ -103,7 +103,7 @@ const hoge = 1;
 
 
 ## 定数
-`const` を使用。参照の再割当てを防ぐ為。
+- 可能なら `const` を使用。参照の再割当てを防ぐ為。
 ```javascript
 const HOGE_HOGE = 1;
 ```
