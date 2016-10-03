@@ -304,11 +304,11 @@ JavaScriptからはノードのクラスを付け替えるという実装を選�
 ## コンパイラ・トランスパイラ
 基本は以下のどれかを使用する。
 
-### [CoffeeScript](http://coffeescript.org/)
-JavaScript がもつ Bad Parts を排除できる。
-
 ### [Babel](https://babeljs.io/)
 ECMAScript の最新仕様で記述できる。
 
 ### [TypeScript](https://www.typescriptlang.org/)
 静的型付けを使用して記述できる。
+
+### [CoffeeScript](http://coffeescript.org/)
+JavaScript がもつ Bad Parts を排除できる。
